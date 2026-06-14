@@ -1,13 +1,22 @@
+require("dotenv").config();
+
 console.log("THIS IS MY INDEX FILE");
 
 const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const { createClient } = require("@supabase/supabase-js");
-
-dotenv.config();
+const chatRoute = require("./routes/chat");
 
 const app = express();
+app.use(express.json());
+app.use(cors());
+app.use(express.json());
+app.use("/api/chat", chatRoute);
+dotenv.config();
+app.post("/test-chat", (req, res) => {
+  res.json({ reply: "test success" });
+});
 
 app.use(cors());
 app.use(express.json());
