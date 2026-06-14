@@ -253,7 +253,6 @@ if (page === "peacementor") {
 
       <button className="side-btn" onClick={getReport}>📊 Weekly Analytics</button>
       <button className="side-btn" onClick={async () => { await getHistory(); setPage("history");}}>📅 Mood History</button>
-      <button className="side-btn">💡 Insights</button>
       <button className="side-btn"onClick={() => setPage("login")}>🔙 Back To Login</button>
 
     </div>
